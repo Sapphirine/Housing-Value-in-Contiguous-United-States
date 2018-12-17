@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content= "IE=edge">
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+  <script src="svg-pan-zoom.js"></script>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src='https://rawgit.com/karpathy/tsnejs/master/tsne.js'></script>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/queue.v1.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.7.1/svg.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+</head>
+
+<h1>
+  <label id = "heading">
+    Housing in Contiguous United States
+  </label>
+</h1>
+
+<body>  
+  <div id="mapContainer" style = "height: 550; width: 100%; ">
+    <script src="script.js"> </script>
+  </div>
+
+  <div>
+    <input type="text" id="myZipCode" name="name" placeholder="Enter Zip Code Here" onkeypress="enter(event)">
+    <input type="button" value="Apply" onclick="clickApplyButton()">
+  </div>
+
+  <div>
+    <div>
+      <div class="pretty p-switch p-slim">
+          <input type="checkbox" id="cb1"/>
+          <div class="state p-primary">
+              <label style="color: rgb(84,139,197)">1 Bedroom</label>
+          </div>
+      </div>
+      
+      <div class="pretty p-switch p-slim">
+          <input type="checkbox" id="cb2"/>
+          <div class="state p-success">
+              <label style="color: rgb(116,181,103)">2 Bedrooms</label>
+          </div>
+      </div>
+      
+      <div class="pretty p-switch p-slim">
+          <input type="checkbox" id="cb3"/>
+          <div class="state p-warning">
+              <label style="color: rgb(230,175,95)">3 Bedrooms</label>
+          </div>
+      </div>
+      
+      <div class="pretty p-switch p-slim">
+          <input type="checkbox" id="cb4"/>
+          <div class="state p-info">
+              <label style="color: rgb(117,190,218)">4 Bedrooms</label>
+          </div>
+      </div>
+      
+      <div class="pretty p-switch p-slim">
+          <input type="checkbox" id="cb5"/>
+          <div class="state p-danger">
+              <label style="color: rgb(201,92,84)">5 Bedrooms and More</label>
+          </div>
+      </div>
+
+  <div style="height : 100%; width:100%; alian:center;">
+    <table id="myTable" style="display: none;">
+      <tr>
+        <td>Market Health Index</td>
+        <td>Changes by Month</td>
+        <td>Changes by Year</td>
+        <td>Days on Market</td>
+        <td>Prediction of Price per sqft</td>
+      </tr>
+      <tr>
+        <td id = "cell1">&nbsp;</td>
+        <td id = "cell2">&nbsp;</td>
+        <td id = "cell3">&nbsp;</td>
+        <td id = "cell4">&nbsp;</td>
+        <td id = "cell5">&nbsp;</td>
+      </tr>
+    </table>
+  </div>
+
+  <p id = "warning" style="display: none;"> </p>
+
+    </div>
+
+  <p id="errorMessage">&nbsp;</p >  
+
+  <div id="chartContainer0" class="chartContainer"></div>
+  <label><br></label>
+  <label><br></label>
+  <div id="chartContainer1" class="chartContainer"></div> 
+  <label><br></label>
+  <label><br></label>
+  <div id="chartContainer2" class="chartContainer"></div> 
+
+</body>
+
